@@ -4,6 +4,8 @@ import "./login.css";
 import Navs from "../Navs/Navs";
 import { Navigate, useNavigate } from "react-router";
 import Cookies from "universal-cookie";
+import "react-toastify/dist/ReactToastify.css";
+import { toast, ToastContainer } from "react-toastify";
 const baseUrl = "https://khutta-ma-jutta-backend.herokuapp.com";
 
 const Login = (props) => {
@@ -24,7 +26,6 @@ const Login = (props) => {
   };
 
   const submitHandler = async (e) => {
-    console.log("fsdf");
     e.preventDefault();
     const data = {
       email,
@@ -42,13 +43,16 @@ const Login = (props) => {
         navigate("/");
         // window.location.reload(false);
       })
-      .catch((error) => console.log(error.message));
+      .catch((error) => {
+        toast.error(error?.response?.data?.error);
+      });
   };
+
+  if (cookies.get("token")) navigate("/");
 
   // HTML file to show to the user
   return (
     <div>
-      <Navs />
       <section className="vh-100" style={{ height: "50vh !important" }}>
         <div className="container py-5 h-100">
           <div class="row d-flex align-items-center justify-content-center h-100">

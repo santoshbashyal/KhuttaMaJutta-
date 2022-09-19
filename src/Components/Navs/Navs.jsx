@@ -14,7 +14,6 @@ const Navs = () => {
 
   const logout = async () => {
     await axios.get(`${baseUrl}/api/v1/auth/logout`);
-    console.log("dsfsfd");
     cookies.remove("token");
     navigate("/");
     window.location.reload(false);
@@ -40,60 +39,62 @@ const Navs = () => {
             <button className="search-btn "> search</button>
           </div>
           {cookies.get("token") ? (
-            <div onClick={() => logout()}>
+            <div onClick={() => logout()} className="logout">
               <li>Logout</li>
             </div>
           ) : (
-            <Link to="/auth/login">
+            <>
+              <Link to="/auth/login">
+                <img
+                  src={
+                    process.env.PUBLIC_URL +
+                    "https://i.postimg.cc/xJNyRQwf/user.png"
+                  }
+                  alt="user"
+                  height="37cm "
+                  width="37 "
+                />
+              </Link>
+              <Link to="/auth/signup" className="register">
+                <span>Register</span>
+              </Link>
+            </>
+          )}
+          {cookies.get("token") && (
+            <Link to="/checkout">
               <img
                 src={
                   process.env.PUBLIC_URL +
-                  "https://i.postimg.cc/xJNyRQwf/user.png"
+                  "https://i.postimg.cc/jCG3Bgc3/cart.png"
                 }
-                alt="user"
+                alt="cart"
                 height="37cm "
-                width="37 "
+                width="40 "
               />
             </Link>
           )}
-          <Link to="# ">
-            <img
-              src={
-                process.env.PUBLIC_URL +
-                "https://i.postimg.cc/jCG3Bgc3/cart.png"
-              }
-              alt="cart"
-              height="37cm "
-              width="40 "
-            />
-          </Link>
         </div>
       </div>
       <ul className="links-container ">
         <li className="link-item ">
-          <a id="homeId" className="link ">
+          <Link id="homeId" className="link " to="/">
             home
-          </a>{" "}
+          </Link>{" "}
         </li>
         <li className="link-item ">
-          <a id="womenId" className="link ">
+          <Link id="womenId" className="link " to="/women">
             women
-          </a>
+          </Link>
         </li>
         <li className="link-item ">
-          <a id="menId" className="link ">
+          <Link id="menId" className="link " to="/men">
             men
-          </a>
+          </Link>
         </li>
         <li className="link-item ">
-          <a id="kidsId" className="link ">
+          <Link id="kidsId" className="link " to="/kids">
             kids
-          </a>
-        </li>
-        <li className="link-item ">
-          <a id="accessoriesId" className="link ">
-            accessories
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

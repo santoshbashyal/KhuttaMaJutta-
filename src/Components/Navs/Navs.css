@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
 }
-.Logout {
+.logout {
     padding: 6px;
     font-weight: bold;
     cursor: pointer;
@@ -34,6 +34,11 @@
 .search {
     width: 500px;
     display: flex;
+}
+
+.register {
+    text-decoration: none;
+    color: #292828;
 }
 
 .search-box {

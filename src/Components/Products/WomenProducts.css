@@ -31,3 +31,24 @@
         .nxt-btn:hover img {
             opacity: 1;
         }
+
+.menContainer {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-card-men {
+    width: 30rem;
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.79);
+    -webkit-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.79);
+    -moz-box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.79);
+    border-radius: 10px;
+    margin: 2rem;
+    padding: 1rem;
+}
+.product-info-men  h2  p {
+    color:rgb(0, 0, 0);
+}

@@ -32,6 +32,7 @@
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
+    height: 40rem;
 }
 
 .product-container::-webkit-scrollbar {
@@ -71,29 +72,26 @@
 
 .card-btn {
     position: absolute;
-    bottom: 10px;
+    bottom: 38px;
     left: 50%;
     transform: translateX(-50%);
     padding: 10px;
     width: 90%;
+    color: black;
     text-transform: capitalize;
     border: none;
     outline: none;
-    background: #fff;
+    background-color: #fff;
     border-radius: 8px;
     transition: 0.5s;
     cursor: pointer;
-    opacity: 0;
+    opacity: 1;
 }
 
 .product-card:hover .card-btn {
     opacity: 1;
 }
 
-.card-btn:hover {
-    background: #000000;
-    color: #fff;
-}
 
 .product-info {
     color: #fff;
